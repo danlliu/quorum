@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}quorum{% endblock %}
+{% block content %}
+	<h1>Welcome to quorum</h1>
+	<p>Simple, free, and convenient. See who's going and who's not.</p>
+
+	<form action="{{url_for('create_event')}}" method="post" enctype="multipart/formdata">
+		<div class="form-group m-3">
+			<label for="name">Event name</label>
+			<input type="text" class="form-control" name="name" id="name" placeholder="Event name">
+		</div>
+		<div class="form-group m-3">
+			<label for="location">Event location</label>
+			<input type="text" class="form-control" name="location" id="location" placeholder="Event location">
+		</div>
+		<div class="form-group m-3">
+			<label for="time">Event date and time</label>
+			<input type="datetime-local" class="form-control" name="time" id="time">
+		</div>
+		<button type="submit" class="btn btn-primary m-3">Get started!</button>
+	</form>
+{% endblock %}
